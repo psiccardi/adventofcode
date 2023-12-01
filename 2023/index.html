@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdventOfCode</title>
+</head>
+<body>
+    <select id="exercise-select">
+        <option value="">Select exercise</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="11">11</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+    </select>
+    <div id="text1"></div>
+    <h1>Output1</h1>
+    <div id="output1"></div>
+    <div id="text2"></div>
+    <h1>Output2</h1>
+    <div id="output2"></div>
+    <script src="day1.js"></script>
+    <script src="day2.js"></script>
+    <script src="day3.js"></script>
+    <script src="day4.js"></script>
+    <script src="day5.js"></script>
+    <script src="day6.js"></script>
+    <script src="day7.js"></script>
+    <script src="day8.js"></script>
+    <script src="day9.js"></script>
+    <script src="day10.js"></script>
+    <script src="day11.js"></script>
+    <script src="day12.js"></script>
+    <script src="day13.js"></script>
+    <script src="day14.js"></script>
+    <script src="day15.js"></script>
+    <script src="day16.js"></script>
+    <script src="day17.js"></script>
+    <script src="day18.js"></script>
+    <script src="day19.js"></script>
+    <script src="day20.js"></script>
+    <script src="day21.js"></script>
+    <script src="day22.js"></script>
+    <script src="day23.js"></script>
+    <script src="day24.js"></script>
+    <script src="day25.js"></script>
+    <script>
+        document.getElementById('exercise-select').onchange = function (event) {
+            const index = event.target.value;
+            if (typeof self['exercise' + index] !== "undefined") {
+                console.log('exercise', index)
+                document.getElementById('text1').innerHTML = self['exercise' + index].text1;
+                document.getElementById('text2').innerHTML = self['exercise' + index].text2;
+                document.getElementById('output1').innerHTML = self['exercise' + index].executeFirst();
+                document.getElementById('output2').innerHTML = self['exercise' + index].executeSecond();
+            }
+        }
+    </script>
+</body>
+</html>
